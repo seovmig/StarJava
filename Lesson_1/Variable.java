@@ -9,8 +9,7 @@ public class Variable {
         char name = 'M';
         boolean status = true;
 
-        System.out.println();
-        System.out.println("Информация о моём компьютере: ");
+        System.out.println("\nИнформация о моём компьютере: ");
         System.out.println("Тип системы: " + systemType);
         System.out.println(core + " ядер");
         System.out.println(cpuFrequency + " GHz");
@@ -18,7 +17,6 @@ public class Variable {
         System.out.println(ram + " RAM");
         System.out.println(ssd + " Гб");
         System.out.println(name + " - Название ПК");
-        System.out.println("Статус: " + status);
-        System.out.println();
+        System.out.println("Статус: " + status + "\n");
     }
 }
