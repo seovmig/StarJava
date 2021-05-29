@@ -1,7 +1,7 @@
 public class Calculator {
     public static void main(String[] args) {
-        double number1 = 2;
-        double number2 = 5;
+        double number1 = 3;
+        double number2 = 2;
         char mathSign = '^';
 
         if(mathSign == '+') {
@@ -17,8 +17,13 @@ public class Calculator {
                 System.out.println(number1 / number2);
             }
         } else if(mathSign == '^') {
-            double degreeResult = number1;
-            for(int i = 0; i < number2; i++) {
+            double degreeResult = 1;
+
+            if(number2 != 0) {
+                degreeResult = number1;
+            }
+
+            for(int i = 1; i < number2; i++) {
                 degreeResult *= number1;
             }
 
