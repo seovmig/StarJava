@@ -1,7 +1,7 @@
 public class Calculator {
-    private double number1 = 3;
-    private double number2 = 3;
-    private char mathSign = '^';
+    private double number1;
+    private double number2;
+    private char mathSign;
 
     public double getNumber1() {
         return number1;
@@ -27,7 +27,7 @@ public class Calculator {
         this.mathSign = mathSign;
     }
 
-    public double mathSign() {
+    public double compute() {
         double result = 0;
 
         switch(mathSign) {
@@ -48,17 +48,15 @@ public class Calculator {
                 }
                 break;
             case '^' :
-                double degreeResult = 1;
+                result = 1;
 
                 if(number2 != 0) {
-                    degreeResult = number1;
+                    result = number1;
                 }
 
                 for(int i = 1; i < number2; i++) {
-                    degreeResult *= number1;
+                    result *= number1;
                 }
-
-                result = degreeResult;
                 break;
             case '%' :
                 result = number1 % number2;
