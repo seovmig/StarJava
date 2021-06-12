@@ -30,6 +30,6 @@ public class CalculatorTest {
                 }
             } while(!yesOrNo.equals("yes") && !yesOrNo.equals("no"));
         }
-        System.out.println("\nпрограмма завершена\n");
+        System.out.println("\nПрограмма завершена\n");
     }
 }
