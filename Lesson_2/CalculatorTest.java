@@ -4,9 +4,9 @@ public class CalculatorTest {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         Calculator calculator = new Calculator();
-        boolean programIsRun = true;
+        String yesOrNo = "yes";
 
-        while(programIsRun) {
+        while(yesOrNo.equals("yes")) {
             System.out.println("\nКалькулятор запущен: ");
             System.out.print("\nВведите первое число: ");
             calculator.setNumber1(console.nextInt());
@@ -21,23 +21,15 @@ public class CalculatorTest {
 
             console.nextLine();
 
-            String checkingCommand;
             do {
                 System.out.print("\nХотите продолжить вычисления? [yes/no]: ");
-                checkingCommand = console.nextLine();
+                yesOrNo = console.nextLine();
 
-                if(!checkingCommand.equals("yes") & !checkingCommand.equals("no")) {
+                if(!yesOrNo.equals("yes") && !yesOrNo.equals("no")) {
                     System.out.println("\nНеизвестная команда. Введи yes или no");
                 }
-            } while(!checkingCommand.equals("yes") & !checkingCommand.equals("no"));
-
-            switch(checkingCommand) {
-                case "yes" :
-                    continue;
-                case "no" :
-                    System.out.println("\nпрограмма завершена\n");
-                    programIsRun = false;
-             }
-        } 
+            } while(!yesOrNo.equals("yes") && !yesOrNo.equals("no"));
+        }
+        System.out.println("\nпрограмма завершена\n");
     }
 }
