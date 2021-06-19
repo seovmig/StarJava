@@ -16,17 +16,8 @@ public class GuessNumberTest {
         while(yesOrNo.equals("yes")) {
             System.out.println("\nИгра запущена: ");
 
-            //int computerNumber = random.nextInt(100);
-            //int playerNumber = 101;
             GuessNumber guessNumber = new GuessNumber(playerName1, playerName2);
-
-            // while(true) {
-                // Player player = new Player(playerName1);
-                guessNumber.GuessNumber();
-
-                // Player player = new Player(playerName2);
-                // guessNumber.GuessNumber();
-            // }
+            guessNumber.GuessNumber();
 
             do {
                 System.out.print("\nХотите продолжить игру? [yes/no]: ");

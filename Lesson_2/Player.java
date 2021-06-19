@@ -1,25 +1,9 @@
 public class Player {
     String playerName;
-    // int playerNumber;
+    int playerNumber;
 
-    public Player(String playerName) {
+    public Player(String playerName, int playerNumber) {
         this.playerName = playerName;
-        // this.playerNumber = playerNumber;
+        this.playerNumber = playerNumber;
     }
-
-    // public String getPlayerName() {
-    //     return playerName;
-    // }
-
-    // public void setPlayerName(String playerName) {
-    //     this.playerName = playerName;
-    // }
-
-    // public int getNumber() {
-    //     return number;
-    // }
-
-    // public void setNumber(int number) {
-    //     this.number = number;
-    // }
 }
