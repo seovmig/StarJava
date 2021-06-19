@@ -22,6 +22,7 @@ public class GuessNumber {
             }
 
             String playerName;
+
             if(idPlayer == 1) {
                 playerName = playerName1;
             } else {
