@@ -1,24 +1,31 @@
 public class JaegerTest {
     public static void main(String[] args) {
-        Jaeger jaeger = new Jaeger();
+        // Jaeger jaeger = new Jaeger();
+        Jaeger chernoAlpha = new Jaeger("\nCherno Alpha", 3);
 
-        jaeger.setModelName("\nCherno Alpha");
-        jaeger.setSpeed(3);
+        // jaeger.modelName = "\nCherno Alpha";
+        // jaeger.speed = 3;
 
-        System.out.println(jaeger.getModelName());
+        System.out.println(chernoAlpha.modelName);
+        System.out.println(chernoAlpha.speed);
 
-        if(jaeger.getSpeed() > 0) {
-            jaeger.move();
+        if(chernoAlpha.speed > 0) {
+            chernoAlpha.move();
+        } else {
+            System.out.println("Робот остановился!\n");
         }
 
-        jaeger.setModelName("\nCrimson Typhoon");
-        jaeger.setSpeed(9);
+        Jaeger crimsonTyphoon = new Jaeger("\nCrimson Typhoon", 99);
 
-        System.out.println(jaeger.getModelName());
+        // jaeger.modelName = "\nCrimson Typhoon";
+        // jaeger.speed = 99;
 
-        if(jaeger.getSpeed() > 0) {
-            jaeger.move();
-            System.out.println(jaeger.scanKaiju());
+        System.out.println(crimsonTyphoon.modelName);
+        System.out.println(crimsonTyphoon.speed);
+
+        if(crimsonTyphoon.speed > 0) {
+            crimsonTyphoon.move();
+            System.out.println(crimsonTyphoon.scanKaiju());
         }
     }
 }
