@@ -1,10 +1,8 @@
 import java.util.Scanner;
-import java.util.Random;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
-        Random random = new Random();
 
         System.out.print("\nВведите имя первого игрока: ");
         String playerName1 = console.nextLine();
