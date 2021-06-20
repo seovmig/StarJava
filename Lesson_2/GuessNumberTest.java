@@ -14,8 +14,8 @@ public class GuessNumberTest {
         while(yesOrNo.equals("yes")) {
             System.out.println("\nИгра запущена: ");
 
-            GuessNumber guessNumber = new GuessNumber(playerName1, playerName2);
-            guessNumber.GuessNumber();
+            GuessNumber guessNumber = new GuessNumber();
+            guessNumber.start(playerName1, playerName2);
 
             do {
                 System.out.print("\nХотите продолжить игру? [yes/no]: ");
