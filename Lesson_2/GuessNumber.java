@@ -36,7 +36,6 @@ public class GuessNumber {
                 System.out.println("Игрок ввел число: " + playerNumber);
             } else {
                 System.out.println("\nПоздравляем игрока " + player.getName() + ", число угадано! Загаданное число: " + playerNumber);
-                // break;
             }
         }
         console.nextLine();
