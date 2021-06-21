@@ -17,10 +17,8 @@ public class GuessNumber {
                 playerName = playerName1;
             }
 
-            Player player = new Player(playerName);
-
             do {
-                System.out.print("\nИгрок " + player.getName() + " ведите число от 0 до 100: ");
+                System.out.print("\nИгрок " + playerName + " ведите число от 0 до 100: ");
                 playerNumber = console.nextInt();
 
                 if(playerNumber > 100 || playerNumber < 0) {
@@ -35,7 +33,7 @@ public class GuessNumber {
                 System.out.println("\nДанное число меньше того, что загадал компьютер");
                 System.out.println("Игрок ввел число: " + playerNumber);
             } else {
-                System.out.println("\nПоздравляем игрока " + player.getName() + ", число угадано! Загаданное число: " + playerNumber);
+                System.out.println("\nПоздравляем игрока " + playerName + ", число угадано! Загаданное число: " + playerNumber);
             }
         }
         console.nextLine();
