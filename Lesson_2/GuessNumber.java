@@ -40,6 +40,5 @@ public class GuessNumber {
             }
             console.nextLine();
         }
-        
     }
 }
