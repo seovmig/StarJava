@@ -6,36 +6,40 @@ public class GuessNumber {
     Random random = new Random();
 
     private int computerNumber = random.nextInt(100);
-    private int playerNumber = 101;
-    private String playerName = "";
+    private Player player = new Player("");
 
     public void start(String playerName1, String playerName2) {
-        while(playerNumber != computerNumber) {
-            if(playerName.equals(playerName1)) {
-                playerName = playerName2;
+        Player player1 = new Player(playerName1);
+        Player player2 = new Player(playerName2);
+
+        while(true) {
+            if(player.getName().equals(player1.getName())) {
+                player.setName(player2.getName());
             } else {
-                playerName = playerName1;
+                player.setName(player1.getName());
             }
 
             do {
-                System.out.print("\nИгрок " + playerName + " ведите число от 0 до 100: ");
-                playerNumber = console.nextInt();
+                System.out.print("\nИгрок " + player.getName() + " ведите число от 0 до 100: ");
+                player.setNumber(console.nextInt());
 
-                if(playerNumber > 100 || playerNumber < 0) {
+                if(player.getNumber() > 100 || player.getNumber() < 0) {
                     System.out.println("\nЧисло задано неверно. Игра угадай число от 0 до 100.\n");
                 }
-            } while(playerNumber > 100 || playerNumber < 0);
+            } while(player.getNumber() > 100 || player.getNumber() < 0);
 
-            if(playerNumber > computerNumber) {
+            if(player.getNumber() > computerNumber) {
                 System.out.println("\nДанное число больше того, что загадал компьютер");
-                System.out.println("Игрок ввел число: " + playerNumber);
-            } else if(playerNumber < computerNumber) {
+                System.out.println("Игрок ввел число: " + player.getNumber());
+            } else if(player.getNumber() < computerNumber) {
                 System.out.println("\nДанное число меньше того, что загадал компьютер");
-                System.out.println("Игрок ввел число: " + playerNumber);
+                System.out.println("Игрок ввел число: " + player.getNumber());
             } else {
-                System.out.println("\nПоздравляем игрока " + playerName + ", число угадано! Загаданное число: " + playerNumber);
+                System.out.println("\nПоздравляем игрока " + player.getName() + ", число угадано! Загаданное число: " + player.getNumber());
+                break;
             }
+            console.nextLine();
         }
-        console.nextLine();
+        
     }
 }
