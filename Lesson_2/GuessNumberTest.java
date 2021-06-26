@@ -5,17 +5,17 @@ public class GuessNumberTest {
         Scanner console = new Scanner(System.in);
 
         System.out.print("\nВведите имя первого игрока: ");
-        String playerName1 = console.nextLine();
+        Player playerName1 = new Player(console.nextLine());
 
         System.out.print("\nВведите имя второго игрока: ");
-        String playerName2 = console.nextLine();
+        Player playerName2 = new Player(console.nextLine());
 
         String yesOrNo = "yes";
         while(yesOrNo.equals("yes")) {
             System.out.println("\nИгра запущена: ");
 
             GuessNumber guessNumber = new GuessNumber();
-            guessNumber.start(playerName1, playerName2);
+            guessNumber.start(playerName1.getName(), playerName2.getName());
 
             do {
                 System.out.print("\nХотите продолжить игру? [yes/no]: ");
