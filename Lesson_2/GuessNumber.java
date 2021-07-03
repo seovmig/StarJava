@@ -15,10 +15,10 @@ public class GuessNumber {
     }
 
     public void start() {
-        Player currentPlayer = new Player("");
+        Player currentPlayer = null;
 
         while(true) {
-            currentPlayer = currentPlayer == player1? player2 : player1;
+            currentPlayer = currentPlayer == player1 ? player2 : player1;
 
             do {
                 System.out.print("\nИгрок " + currentPlayer.getName() + " ведите число от 0 до 100: ");
