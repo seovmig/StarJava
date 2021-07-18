@@ -1,3 +1,5 @@
+package com.startJava.Lesson_1.game;
+
 public class GuessNumber {
     public static void main(String[] args) {
         int computerNumber = 79;

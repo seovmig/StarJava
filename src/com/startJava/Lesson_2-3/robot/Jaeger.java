@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2-3.robot;
+
 public class Jaeger {
     String modelName;
     int speed;

@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2-3.person;
+
 public class Person {
 
     int age = 22;

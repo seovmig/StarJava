@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2-3.calculator;
+
 import java.util.Scanner;
 
 public class CalculatorTest {

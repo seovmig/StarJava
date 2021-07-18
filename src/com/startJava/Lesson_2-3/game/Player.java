@@ -1,3 +1,5 @@
+package com.startJava.Lesson_2-3.game;
+
 public class Player {
     private String name;
     private int number;
