@@ -1,4 +1,4 @@
-package com.startJava.Lesson_2-3.game;
+package com.startJava.Lesson_2_3.game;
 
 import java.util.Scanner;
 import java.util.Random;
