@@ -1,9 +1,10 @@
-package com.startJava.Lesson_2_3.game;
+package com.startJava.Lesson_2_3_4.game;
 
 import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
+        System.out.println("\nИгра запущена: " + "\nу каждого игрока по 10 попыток");
         Scanner console = new Scanner(System.in);
 
         System.out.print("\nВведите имя первого игрока: ");
@@ -12,11 +13,10 @@ public class GuessNumberTest {
         System.out.print("\nВведите имя второго игрока: ");
         String playerName2 = console.nextLine();
 
+        GuessNumber guessNumber = new GuessNumber(playerName1, playerName2);
+
         String yesOrNo = "yes";
         while(yesOrNo.equals("yes")) {
-            System.out.println("\nИгра запущена: ");
-
-            GuessNumber guessNumber = new GuessNumber(playerName1, playerName2);
             guessNumber.start();
 
             do {
@@ -27,6 +27,10 @@ public class GuessNumberTest {
                     System.out.println("\nНеизвестная команда. Введи yes или no");
                 }
             } while(!yesOrNo.equals("yes") && !yesOrNo.equals("no"));
+
+            if(yesOrNo.equals("yes")) {
+                guessNumber.setYesOrNo("yes");
+            }
         }
         System.out.println("\nИгра завершена\n");
     }
