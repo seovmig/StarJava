@@ -17,7 +17,7 @@ public class GuessNumberTest {
 
         String yesOrNo = "yes";
         while(yesOrNo.equals("yes")) {
-            guessNumber.start();
+            guessNumber.start(yesOrNo);
 
             do {
                 System.out.print("\nХотите продолжить игру? [yes/no]: ");
@@ -27,10 +27,6 @@ public class GuessNumberTest {
                     System.out.println("\nНеизвестная команда. Введи yes или no");
                 }
             } while(!yesOrNo.equals("yes") && !yesOrNo.equals("no"));
-
-            if(yesOrNo.equals("yes")) {
-                guessNumber.setYesOrNo("yes");
-            }
         }
         System.out.println("\nИгра завершена\n");
     }
