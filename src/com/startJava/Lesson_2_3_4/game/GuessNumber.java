@@ -1,6 +1,5 @@
 package com.startJava.Lesson_2_3_4.game;
 
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -25,54 +24,55 @@ public class GuessNumber {
             player2.clearNumbers(playerTurn);
         }
 
-        while (true) {
+        while(true) {
             currentPlayer = currentPlayer == player1 ? player2 : player1;
-            int PlayerNumber;
+            int playerNumber;
 
             do {
                 System.out.print("\nИгрок " + currentPlayer.getName() + " ведите число от 0 до 100: ");
-                currentPlayer.setNumbers(console.nextInt(), playerTurn);
+                currentPlayer.setNumber(console.nextInt(), playerTurn);
 
-                PlayerNumber = currentPlayer.getNumber(playerTurn);
+                playerNumber = currentPlayer.getNumber(playerTurn);
 
-                if (PlayerNumber > 100 || PlayerNumber < 0) {
+                if(playerNumber > 100 || playerNumber < 0) {
                     System.out.println("Вы ввели неверное число.");
-                } else {
-                    if (PlayerNumber != secretNumber && playerTurn != 9) {
-                        System.out.println("У игрока осталось: " + (9 - playerTurn) + " попыток.");
-                    } else if (playerTurn == 9) {
-                        System.out.println("У " + currentPlayer.getName() + " закончились попытки");
-                    }
+                } else if(playerNumber != secretNumber && playerTurn != 9) {
+                    System.out.println("У игрока осталось: " + (9 - playerTurn) + " попыток.");
+                } else if(playerTurn == 9) {
+                    System.out.println("У " + currentPlayer.getName() + " закончились попытки");
                 }
-            } while (PlayerNumber > 100 || PlayerNumber < 0);
+            } while(playerNumber > 100 || playerNumber < 0);
 
-            if (PlayerNumber > secretNumber) {
-                System.out.println("Число: " + PlayerNumber + " больше того, что загадал компьютер");
-            } else if (PlayerNumber < secretNumber) {
-                System.out.println("Число: " + PlayerNumber + " меньше того, что загадал компьютер");
+            if(playerNumber > secretNumber) {
+                System.out.println("Число: " + playerNumber + " больше того, что загадал компьютер");
+            } else if(playerNumber < secretNumber) {
+                System.out.println("Число: " + playerNumber + " меньше того, что загадал компьютер");
             } else {
                 playerTurn++;
-                System.out.println("\nИгрок " + currentPlayer.getName() + " угадал число " + PlayerNumber + " с " + playerTurn + " попытки");
+                System.out.println("\nИгрок " + currentPlayer.getName() + " угадал число " + playerNumber + " с " + playerTurn + " попытки");
 
-                System.out.println("Все ведённые числа победителя: ");
-                System.out.println(Arrays.toString(currentPlayer.getNumbers(playerTurn)));
+                nameNumbersOutput(currentPlayer.getName(), currentPlayer.getNumbers(playerTurn));
                 break;
             }
 
-            if (currentPlayer == player2 && playerTurn == 9) {
+            if(currentPlayer == player2 && playerTurn == 9) {
                 System.out.println("\nУ всех закончились попытки. Компьютер выйграл. Загаданное число: " + secretNumber);
 
-                System.out.println("\nИгрок " + player1.getName() + " ввел числа: ");
-                System.out.println(Arrays.toString(player1.getNumbers(playerTurn)));
-
-                System.out.println("\nИгрок " + player2.getName() + " ввел числа: ");
-                System.out.println(Arrays.toString(player2.getNumbers(playerTurn)));
+                nameNumbersOutput(player1.getName(), player1.getNumbers(playerTurn));
+                nameNumbersOutput(player2.getName(), player2.getNumbers(playerTurn));
                 break;
             }
 
-            if (currentPlayer == player2) {
+            if(currentPlayer == player2) {
                 playerTurn++;
             }
+        }
+    }
+
+    private void nameNumbersOutput(String nameCurrentPlayer, int[] numbersCurrentPlayer) {
+        System.out.println("\nИгрок " + nameCurrentPlayer + " ввел числа: ");
+        for(int numbers : numbersCurrentPlayer) {
+            System.out.printf(numbers + " ");
         }
     }
 }

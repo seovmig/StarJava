@@ -18,7 +18,7 @@ public class Player {
         return numbers[index];
     }
 
-    public void setNumbers(int number, int index) {
+    public void setNumber(int number, int index) {
         numbers[index] = number;
     }
 
