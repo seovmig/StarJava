@@ -66,9 +66,9 @@ public class GuessNumber {
         }
     }
 
-    private void outputPlayerNumbers(Player player, int playerTurn) {
+    private void outputPlayerNumbers(Player player, int index) {
         System.out.println("\nИгрок " + player.getName() + " ввел числа: ");
-        for(int number : player.getNumbers(playerTurn)) {
+        for(int number : player.getNumbers(index)) {
             System.out.printf(number + " ");
         }
     }
