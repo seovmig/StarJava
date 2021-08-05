@@ -18,8 +18,14 @@ public class Player {
         return numbers[index];
     }
 
-    public void setNumber(int number, int index) {
-        numbers[index] = number;
+    public boolean setNumber(int number, int index) {
+        if(number > 100 || number < 0) {
+            System.out.println("Вы ввели неверное число.");
+            return false;
+        } else {
+            numbers[index] = number;
+            return true;
+        }
     }
 
     public int[] getNumbers(int index) {
