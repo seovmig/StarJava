@@ -34,12 +34,12 @@ public class GuessNumber {
             currentPlayer = currentPlayer == player1 ? player2 : player1;
 
             do {
+                System.out.print("\nИгрок " + currentPlayer.getName() + " ведите число от 0 до 100: ");
+                correctNumber = currentPlayer.setNumber(console.nextInt(), numberAttempt);
+
                 if(!correctNumber) {
                     System.out.println("Вы ввели неверное число.");
                 }
-
-                System.out.print("\nИгрок " + currentPlayer.getName() + " ведите число от 0 до 100: ");
-                correctNumber = currentPlayer.setNumber(console.nextInt(), numberAttempt);
             } while(!correctNumber);
 
             int playerNumber = currentPlayer.getNumber(numberAttempt);
